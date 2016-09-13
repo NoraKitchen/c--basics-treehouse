@@ -1,11 +1,19 @@
-﻿class Program
+﻿using System;
+
+namespace Treehouse
 {
-    static void Main()
+    class Program
     {
-        //prompt user for minutes exercised
-        System.Console.Write("Enter how many minues you exercised: ");
-        //add minutes exercised to total
-        //display total min exercised to screen
-        //repeat until user quits
+        static void Main()
+        {
+            //prompt user for minutes exercised
+            Console.Write("Enter how many minues you exercised: ");
+
+            string entry = Console.ReadLine();
+            //add minutes exercised to total
+            //display total min exercised to screen
+            Console.WriteLine("You've exercised" + entry + "minutes");
+            //repeat until user quits
+        }
     }
 }
