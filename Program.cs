@@ -18,13 +18,55 @@ namespace Treehouse
 
                 if (entry != "quit")
                 {
-                    //add minutes exercised to total
-                    runningTotal += int.Parse(entry);
+                    try
+                    {
+                        int minutes = int.Parse(entry);
+                        if (minutes <= 0)
+                        {
+                            Console.WriteLine("Please enter a valid value.");
+                            continue;
+                        }
 
-                    //display total min exercised to screen
-                    Console.WriteLine("You've exercised " + runningTotal + " minutes");
-                    //repeat until user quits
+                        string message;
+
+                        if (minutes <= 10)
+                        {
+                            message = "Better than nothing!";
+                        }
+                        else if (minutes <= 30)
+                        {
+                            message = "Good job!";
+                        }
+                        else if (minutes <= 60)
+                        {
+                            message = "Crazy good.";
+                        }
+                        else
+                        {
+                            message = "You're just showing off.";
+                        }
+
+                        Console.WriteLine(message);
+
+                        //add minutes exercised to total
+                        runningTotal += minutes;
+
+                        //display total min exercised to screen
+                        Console.WriteLine("You've exercised " + runningTotal + " minutes");
+                        //repeat until user quits
+                    }
+                    catch (System.Exception)
+                    {
+                        Console.WriteLine("Please enter a valid value.");
+                        continue;
+                    }
+                } 
+                else 
+                {
+                    keepGoing = false;
                 }
+
+
             }
         }
     }
