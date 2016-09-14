@@ -7,20 +7,21 @@ namespace Treehouse
         static void Main()
         {
 
-            int runningTotal = 0;
-            bool keepGoing = true;
+            double runningTotal = 0;
 
-            while (keepGoing)
+            while (true)
             {
                 //prompt user for minutes exercised
                 Console.WriteLine("Enter how many minues you exercised. Or type 'quit' to exit: ");
                 string entry = Console.ReadLine();
 
-                if (entry != "quit")
+                if (entry.ToLower() == "quit")
                 {
+                    break;
+                }
                     try
                     {
-                        int minutes = int.Parse(entry);
+                        double minutes = double.Parse(entry);
                         if (minutes <= 0)
                         {
                             Console.WriteLine("Please enter a valid value.");
@@ -60,11 +61,7 @@ namespace Treehouse
                         Console.WriteLine("Please enter a valid value.");
                         continue;
                     }
-                } 
-                else 
-                {
-                    keepGoing = false;
-                }
+                
 
 
             }
